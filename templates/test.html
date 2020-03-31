@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<title>Results</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Oswald"
+    }
+
+    body {
+        font-family: "Open Sans"
+    }
+
+    .w3-bar-item {
+        margin-left: 180px;
+    }
+
+    .press {
+        background-color: #0f4c75;
+        font-weight: bold;
+        border: none;
+        padding: 10px 20px 10px 20px;
+    }
+</style>
+
+<body style="background-color: #deddfa;">
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <div class="w3-bar w3-hide-small" style="background-color: #0f4c75; color: white;">
+        <a href="/" class="w3-bar-item w3-button">
+            <h3><i class="fas fa-home"></i> Home</h3>
+        </a>
+        <a href="/da" class="w3-bar-item w3-button">
+            <h3><i class="fas fa-chart-bar"></i> Data analysis</h3>
+        </a>
+        <a href="/form" class="w3-bar-item w3-button">
+            <h3><i class="fas fa-plane"></i> Predict Delay</h3>
+        </a>
+        <a href="/arr" class="w3-bar-item w3-button">
+            <h3><i class="fas fa-clipboard-list"></i> Arrivals</h3>
+        </a>
+    </div>
+
+    <div class="w3-content" style="max-width:1600px">
+
+        <header class="w3-container w3-center w3-padding-48 w3-white">
+            <h3><span class="w3-tag"
+                    style="background-color: #0f4c75; color: white; padding: 5px 10px 5px 10px; border-radius: 6px;">Prediction
+                    Result</span></h3>
+        </header>
+
+        <header class="w3-display-container w3-wide" id="home">
+            <div class="w3-display-left w3-padding-large">
+            </div>
+        </header>
+
+        <div class="w3-row w3-padding w3-border" style="width: 60%; margin: auto; text-align: center;">
+            <div class="w3-col">
+                <div class="w3-container w3-white w3-margin w3-padding-large">
+                    <div class="w3-justify">
+                        <h3 style="text-align: center;">{{valu}} minutes</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col">
+                <div class="w3-container w3-margin w3-padding-large" style="background-color: #1b262c; color: white;">
+                    <div class="w3-center">
+                        <img src="data:image/png;base64, {{ plot_url }}" alt="result">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="w3-container" style="padding:32px; background-color: #0f4c75;">
+        <a href="#" class="w3-button w3-padding-large w3-margin-bottom"
+            style="background-color: #1b262c; color: white;"><i class="fa fa-arrow-up w3-margin-right"></i>To the
+            top</a>
+    </footer>
+</body>
+
+</html>

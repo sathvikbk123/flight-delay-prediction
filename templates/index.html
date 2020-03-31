@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<title>Welcome to home page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Oswald"
+    }
+
+    body {
+        font-family: "Open Sans"
+    }
+
+    .w3-bar-item {
+        margin-left: 180px;
+    }
+</style>
+
+<body style="background-color: #deddfa;">
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <div class="w3-bar w3-hide-small" style="background-color: #0f4c75; color: white;">
+        <a href="/" class="w3-bar-item w3-button">
+            <h3><i class="fas fa-home"></i> Home</h3>
+        </a>
+        <a href="/da" class="w3-bar-item w3-button">
+            <h3><i class="fas fa-chart-bar"></i> Data analysis</h3>
+        </a>
+        <a href="/form" class="w3-bar-item w3-button">
+            <h3><i class="fas fa-plane"></i> Predict Delay</h3>
+        </a>
+        <a href="/arr" class="w3-bar-item w3-button">
+            <h3><i class="fas fa-clipboard-list"></i> Arrivals</h3>
+        </a>
+    </div>
+
+    <div class="w3-content" style="max-width:1600px">
+
+        <header class="w3-container w3-center w3-padding-48 w3-white">
+            <h1 class="w3-xxxlarge"><img src="https://image.flaticon.com/icons/svg/1585/1585592.svg" alt="logo"
+                    style="width: 4%; margin: 5px 5px 5px 5px;"><b>UNISYS Project</b></h1>
+            <h3><span class="w3-tag"
+                    style="background-color: #0f4c75; color: white; padding: 5px 10px 5px 10px; border-radius: 6px;">Prediction
+                    of arrival and departure delays of flights</span></h3>
+        </header>
+
+        <header class="w3-display-container w3-wide" id="home">
+            <div class="w3-display-left w3-padding-large">
+            </div>
+        </header>
+
+        <div class="w3-row w3-padding w3-border">
+            <div class="w3-col l8 s12">
+                <div class="w3-container w3-white w3-margin w3-padding-large">
+                    <div class="w3-white w3-margin">
+                        <h4 class="w3-grayscale" style="margin-left: 10px; padding-top: 6px; font-size: 2.3rem;">Problem
+                            Statement</h4>
+                        <div class="w3-container" style="background-color: #0f4c75; color: white; padding-top: 5px;">
+                            <p style="font-size: 1.2rem;">Airport operates on extremely tight margins and delays disrupt
+                                the operational throughput
+                                and
+                                result in bad passenger experience. The aim of this exercise is to identify the flights
+                                which are most likely to be delayed.
+                                In the given dataset, the flight schedule data is provided along with all related
+                                fields.
+                                You are free to augment this data set with any external data (eg. weather,
+                                socio-economic
+                                factors, etc) in your model.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            <div class="w3-col l4">
+
+                <hr>
+
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding" style="background-color: #0f4c75; color: white;">
+                        <h4>Recent Flights</h4>
+                    </div>
+                    <ul class="w3-ul w3-hoverable w3-white">
+                        <li class="w3-padding-16">
+                            <span class="w3-large">AA</span>
+                            <br>
+                            <span>American Airlines Inc.</span>
+                        </li>
+                        <li class="w3-padding-16">
+                            <span class="w3-large">UA</span>
+                            <br>
+                            <span>United Air Lines Inc.</span>
+                        </li>
+                        <li class="w3-padding-16">
+                            <span class="w3-large">B6</span>
+                            <br>
+                            <span>JetBlue Airways</span>
+                        </li>
+                        <li class="w3-padding-16">
+                            <span class="w3-large">DL</span>
+                            <br>
+                            <span>Delta Air Lines Inc.</span>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding" style="background-color: #0f4c75; color: white;">
+                        <h4>Created By</h4>
+                    </div>
+                    <div class="w3-row-padding w3-white" style="padding-top: 10px;">
+                        <div class="w3-col s6">
+                            <p><img src="{{ url_for('static', filename='dpanant.jpg') }}" alt="anant"
+                                    style="width:100%"></p>
+                            <h4>Anant Raj</h4>
+                        </div>
+                        <div class="w3-col s6">
+                            <p><img src="{{ url_for('static', filename='saidp.jpeg') }}" alt="saivenu"
+                                    style="width:100%; height: 210px;"></p>
+                            <h4>Kolli Saivenu</h4>
+                        </div>
+                        <div class="w3-col s6">
+                            <p><img src="{{ url_for('static', filename='kevin.jpeg') }}" alt="mumtaz"
+                                    style="width:100%; height: 210px"></p>
+                            <h4>Mumtaz Irteqa Ahmed</h4>
+                        </div>
+                        <div class="w3-col s6">
+                            <p><img src="{{ url_for('static', filename='dpsath.jpg') }}" alt="sathvik"
+                                    style="width:100%"></p>
+                            <h4>Sathvik B K</h4>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="w3-container" style="padding:32px; background-color: #0f4c75;">
+        <a href="#" class="w3-button w3-padding-large w3-margin-bottom"
+            style="background-color: #1b262c; color: white;"><i class="fa fa-arrow-up w3-margin-right"></i>To the
+            top</a>
+    </footer>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
